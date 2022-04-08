@@ -1,0 +1,70 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+button{
+    padding: 4px;
+}
+
+input{
+    padding: 6px;
+}
+
+
+.form{
+    margin-top: 120px;
+    border: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.infos{
+    width: 200px;
+    border-top: 2px solid black;
+    padding-top: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.datas{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.datas span{
+    padding: 20px;
+    border-radius: 2px;
+    border-bottom: 1px solid black;
+}
+
+span:hover{
+    background-color: lightgrey;
+}
+
+.showInfo{
+    margin-top: 200px;
+    display: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
