@@ -23,13 +23,13 @@ button{
     cursor: pointer;
 }
 
-#btn1{
+.btnSubmit{
     border: 1px solid var(--black-color);
     transition: all 0.15s ease-out;
     border-radius: 3px;
 }
 
-#btn1:hover{
+.btnSubmit:hover{
     background-color: #e4572e;
     color: var(--white-color);
     border: 1px solid var(--white-color);
@@ -50,7 +50,7 @@ input{
 }
 
 input:focus{
-    border: 1.4px solid #e4572e;
+    border: 1.4px solid var(--black-color);
 }
 
 .form{
@@ -63,6 +63,24 @@ input:focus{
     width: 20rem;
     padding: 1rem;
     border-radius: 1.2rem;
+}
+
+.inputWrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 6rem;
+}
+
+.errorTxt{
+    margin-top: 0.4rem;
+    color: red;
+}
+
+.errorTxtall{
+    margin-top: 0.4rem;
+    color: red;
+    display: none;
 }
 
 .wrapDatas{
@@ -100,7 +118,7 @@ input:focus{
     transition: all 0.15s ease-out;
 }
 
-span:hover{
+.datas span:hover{
     background-color: #e4572e;
     color: var(--white-color);
 }

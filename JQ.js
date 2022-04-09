@@ -14,31 +14,53 @@ function createDatadiv() {
 }
 
 $(document).ready(() => {
-  $("#btn1").click(() => {
+  $(".btnSubmit").click(() => {
     const nameData = $("#name").val();
     const ageData = $("#age").val();
     const numberData = $("#number").val();
     function validate() {
-      if(nameData !== "" && ageData !== "" && numberData !== "" ){
-        if(ageData.length == 2 ){
-          $(".datas").append(ageData);
-        } else{
-          alert("idade inválida")
-          return;
-        }
-        if(numberData.length === 9){
-          $(".datas").append(numberData);
-        } else {
-          alert("número inválido")
-          return;
-        }
-        $(".showInfo").fadeIn("slow")
-        $("#btn1").remove();
-        $(".wrapDatas").append(createDiv());
-        return;
+      if(ageData !== "" && numberData !== ""){
+        $(".errorTxtall").hide();
+        let valid = false;
 
+        if(nameData.length > 2){
+          $("#name").css({"border": "1.4px solid green"});
+          $("#name").siblings("span").empty();
+          valid = true;
+        } else{
+          $("#name").css({"border": "1.4px solid red"});
+          $("#name").siblings("span").text("Nome Inválido");
+          valid = false;
+        }
+
+        if(ageData.length == 2 ){
+          $("#age").css({"border": "1.4px solid green"});
+          $("#age").siblings("span").empty();
+        } else{
+          $("#age").css({"border": "1.4px solid red"});
+          $("#age").siblings("span").text("Idade Inválida");
+          valid = false;
+        }
+
+        if(numberData.length === 9){
+          $("#number").css({"border": "1.4px solid green"});
+          $("#number").siblings("span").empty();
+        } else {
+          $("#number").css({"border": "1.4px solid red"});
+          $("#number").siblings("span").text("Número Inválido");
+          valid = false;
+        }
+
+        if(valid){
+          $(".showInfo").fadeIn("slow")
+          $(".bntSubmit").remove();
+          $(".wrapDatas").append(createDiv());
+          return;
+        } else {
+          return;
+        }
       } else{
-        alert("Preencha todos os campos antes de enviar")
+        $(".btnSubmit").siblings().show();
       }
     }
     validate();
@@ -61,6 +83,5 @@ $(document).ready(() => {
     }
 
     $(".infos").append(setDatas())
-
   });
 });

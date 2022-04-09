@@ -16,18 +16,28 @@
     </header>
 
     <div class="form">
-        <label for="">Nome</label>
-        <input type="text" id="name"><br>
-        <label for="">Idade</label>
-        <input type="text" id="age"><br>
-        <label for="">WhatsApp</label>
-        <input type="number" id="number"><br>
-        <button id="btn1">Enviar</button>
+        <div class="inputWrap">
+            <label for="">Nome</label>
+            <input type="text" id="name">
+            <span class="errorTxt"></span>
+        </div>
+        <div class="inputWrap">
+            <label for="">Idade</label>
+            <input type="number" id="age">
+            <span class="errorTxt"></span>
+        </div>
+        <div class="inputWrap">
+            <label for="">WhatsApp</label>
+            <input type="number" id="number">
+            <span class="errorTxt"></span>
+        </div>
+
+        <button class="btnSubmit">Enviar</button>
+        <span class="errorTxtall">Por favor, preencha todos os campos</span>
     </div>
 
     <div class="wrapDatas">
         <button class="showInfo">Carregar<br> Informaçoes</button>
     </div>
-
 </body>
 </html>
