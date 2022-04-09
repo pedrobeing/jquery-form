@@ -1,21 +1,23 @@
 function createDiv() {
   let div = document.createElement("div");
-  div.innerHTML = "os dados foram salvos";
+  div.innerHTML = "Os dados foram salvos";
   div.classList.add("infos");
-  let innerDiv = document.createElement("div");
-  innerDiv.classList.add("datas");
 
-  div.appendChild(innerDiv);
-  return div;;
+  return div;
 }
 
+function createDatadiv() {
+  let dataDiv = document.createElement("div");
+  dataDiv.classList.add("datas");
+
+  return dataDiv;
+}
 
 $(document).ready(() => {
   $("#btn1").click(() => {
     const nameData = $("#name").val();
     const ageData = $("#age").val();
     const numberData = $("#number").val();
-
     function validate() {
       if(nameData !== "" && ageData !== "" && numberData !== "" ){
         if(ageData.length == 2 ){
@@ -24,42 +26,41 @@ $(document).ready(() => {
           alert("idade inválida")
           return;
         }
-
         if(numberData.length === 9){
           $(".datas").append(numberData);
         } else {
           alert("número inválido")
           return;
         }
-
-        $(".showInfo").show("slow")
+        $(".showInfo").fadeIn("slow")
         $("#btn1").remove();
-        $(".form").after(createDiv());
-
+        $(".wrapDatas").append(createDiv());
         return;
 
       } else{
         alert("Preencha todos os campos antes de enviar")
       }
     }
-
     validate();
   })
 
   $(".showInfo").click(() => {
-    $(".infos").empty();
-    $(".showInfo").remove();
+    $(".infos").empty().append(createDatadiv());
+    $(".showInfo").fadeTo("speed", 0);
 
     function setDatas() {
-      
       const nameData = $("#name").val();
       const ageData = $("#age").val();
       const numberData = $("#number").val();
-      return innerDiv;
+      const dataDiv = document.querySelector(".datas")
+      dataDiv.innerHTML += "<span>Nome:<br><br>" + nameData + "</span>";
+      dataDiv.innerHTML += "<span>Idade:<br><br>" + ageData + " anos</span>";
+      dataDiv.innerHTML += "<span>WhatsApp:<br><br>" + numberData + "</span>";
+
+      return;
     }
-    
+
     $(".infos").append(setDatas())
-    
+
   });
 });
-

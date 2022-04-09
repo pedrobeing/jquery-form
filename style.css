@@ -2,69 +2,134 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    background-color: var(--white-color);
+    box-sizing: border-box;
 }
 
-h1{
-    text-align: center;
+:root{
+    --white-color: #e9faf8;
+    --black-color: #141301;
 }
 
-p{
+header{
+    margin-top: 1.2rem;
+    font-size: 1rem;
     text-align: center;
+    color: var(--black-color);
 }
 
 button{
-    padding: 4px;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+#btn1{
+    border: 1px solid var(--black-color);
+    transition: all 0.15s ease-out;
+    border-radius: 3px;
+}
+
+#btn1:hover{
+    background-color: #e4572e;
+    color: var(--white-color);
+    border: 1px solid var(--white-color);
+}
+
+input:-webkit-autofill {
+    box-shadow: 0 0 0 30px #e9faf8 inset;
 }
 
 input{
-    padding: 6px;
+    padding: 0.4rem;
+    border: none;
+    border-bottom: 1.4px solid var(--black-color);
+    background-color: var(--white-color);
+    top: 1.4px;
+    height: 1.6rem;
+    outline: none;
 }
 
+input:focus{
+    border: 1.4px solid #e4572e;
+}
 
 .form{
-    margin-top: 120px;
+    margin: 2rem auto 0 auto;
     border: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+    width: 20rem;
+    padding: 1rem;
+    border-radius: 1.2rem;
+}
+
+.wrapDatas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
 }
 
 .infos{
-    width: 200px;
-    border-top: 2px solid black;
-    padding-top: 10px;
-    margin: 0 auto;
-    margin-top: 30px;
+    width: 12rem;
+    border-top: 2px solid var(--black-color);
+    padding-top: 2rem;
+    margin: 1.4rem auto 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: sans-serif;
     flex-direction: column;
-    gap: 14px;
+    gap: 1rem;
+    transition: all 0.325s ease-out;
 }
 
 .datas{
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 3rem;
 }
 
 .datas span{
-    padding: 20px;
-    border-radius: 2px;
-    border-bottom: 1px solid black;
+    width: 10rem;
+    height: 12rem;
+    padding-top: 1.1rem;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid var(--black-color);
+    transition: all 0.15s ease-out;
 }
 
 span:hover{
-    background-color: lightgrey;
+    background-color: #e4572e;
+    color: var(--white-color);
 }
 
 .showInfo{
-    margin-top: 200px;
     display: none;
+    width: 6rem;
+    border: 1px solid var(--black-color);
+    border-radius: 3px;
+}
+
+.showInfo:hover{
+    background-color: #e4572e;
+    color: var(--white-color);
+    border: 1px solid var(--white-color);
 }
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+@media all and (max-width: 590px) {
+    .datas{
+        flex-direction: column;
+    }
+
+    .datas span{
+        height: 8rem;
+        margin-bottom: 1rem;
+    }
 }
