@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Form</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="JQ.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Form</h1>
+        <p>Coloque suas informaçoes abaixo</p>
+    </header>
+
+    <div class="form">
+        <div class="inputWrap">
+            <label for="">Nome</label>
+            <input type="text" id="name">
+            <span class="errorTxt"></span>
+        </div>
+        <div class="inputWrap">
+            <label for="">Idade</label>
+            <input type="number" id="age">
+            <span class="errorTxt"></span>
+        </div>
+        <div class="inputWrap">
+            <label for="">WhatsApp</label>
+            <input type="number" id="number">
+            <span class="errorTxt"></span>
+        </div>
+
+        <button class="btnSubmit">Enviar</button>
+        <span class="errorTxtall">Por favor, preencha todos os campos</span>
+    </div>
+
+    <div class="wrapDatas">
+        <button class="showInfo">Carregar<br> Informaçoes</button>
+    </div>
+</body>
+</html>

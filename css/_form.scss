@@ -1,0 +1,31 @@
+.form{
+    margin: 2rem auto 0 auto;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20rem;
+    padding: 1rem;
+    border-radius: 1.2rem;
+
+    .inputWrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 6rem;
+    }
+  
+    .btnSubmit{
+        border: 1px solid $black-color;
+        transition: all 0.15s ease-out;
+        border-radius: 3px;
+
+        &:hover{
+            background-color: #e4572e;
+            color: $white-color;
+            border: 1px solid $white-color;
+        }
+    }
+}
+
