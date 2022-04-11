@@ -1,7 +1,5 @@
 .wrapDatas{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexColumn;
     width: 100vw;
 
     .showInfo{
@@ -11,21 +9,16 @@
         border-radius: 3px;
 
         &:hover{
-            background-color: #e4572e;
-            color: $white-color;
-            border: 1px solid $white-color;
+            @include btnHover;
         }
     }
 
     .infos{
+        @include flexColumn;
         width: 12rem;
         border-top: 2px solid $black-color;
         padding-top: 2rem;
         margin: 1.4rem auto 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
         gap: 1rem;
         transition: all 0.325s ease-out;
 
